@@ -1,0 +1,73 @@
+/* LandingPage.css */
+
+.landing-page {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color for contrast */
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center; /* Center the navbar items */
+    background-color: #007bff; /* Bootstrap primary color */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display items in a row */
+  }
+  
+  .navbar li {
+    margin: 0 15px; /* Spacing between category items */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .navbar li:hover {
+    color: #ffcc00; /* Change color on hover */
+  }
+  
+  .news-container {
+    display: grid; /* Grid layout for news items */
+    grid-template-columns: repeat(3, 1fr); /* Fixed 3 columns */
+    gap: 20px; /* Space between news items */
+    padding: 20px; /* Optional: Add padding to the container */
+  }
+  
+  .news-item {
+    background-color: white; /* Background for news items */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+  }
+  
+  .news-item:hover {
+    transform: translateY(-5px); /* Lift the item on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  .news-image {
+    width: 100%; /* Responsive image */
+    border-radius: 5px; /* Rounded corners for images */
+  }
+  
+  .news-title {
+    font-size: 18px;
+    margin: 10px 0; /* Margin for spacing */
+  }
+  
+  .news-description {
+    color: #666; /* Description color */
+  }
+  
