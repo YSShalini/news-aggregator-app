@@ -4,20 +4,26 @@ import { useNavigate } from "react-router-dom";
 import './Signin.css';
 
 const Signin = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [interest, setInterest] = useState("");
-  const [location, setLocation] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);  // Loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Attempting to sign in with:", email, password);
+    setIsLoading(true);  // Start loading
     try {
-      await axios.post("/api/signin", { name, email, password, interest, location });
-      navigate("/dashboard"); // redirect after sign in
+      const response = await axios.post("http://localhost:5000/api/signin", { email, password });
+      localStorage.setItem('user', JSON.stringify(response.data));
+      console.log("Sign in successful, navigating to homepage...");
+      setIsLoading(false);  // Stop loading
+      navigate("/homepage"); // redirect after sign in
     } catch (error) {
       console.error("Sign in error:", error);
+      setErrorMessage("Invalid credentials, please try again.");
+      setIsLoading(false);  // Stop loading
     }
   };
 
@@ -25,13 +31,25 @@ const Signin = () => {
     <div className="signin-container">
       <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <input type="text" placeholder="Interest" value={interest} onChange={(e) => setInterest(e.target.value)} required />
-        <input type="text" placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} required />
-        <button type="submit">Sign In</button>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? "Signing In..." : "Sign In"}
+        </button>
       </form>
+      {errorMessage && <p className="error">{errorMessage}</p>}
     </div>
   );
 };

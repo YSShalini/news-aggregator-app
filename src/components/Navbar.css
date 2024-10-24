@@ -1,0 +1,52 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .nav-categories {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-categories li {
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .nav-categories li:hover {
+    background-color: #555;
+  }
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .country-dropdown {
+    padding: 8px;
+    margin-right: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+  }
+  
+  .signin-btn,
+  .signup-btn {
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .signin-btn:hover,
+  .signup-btn:hover {
+    background-color: #0056b3;
+  }
+  

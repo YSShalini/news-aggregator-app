@@ -1,5 +1,20 @@
 /* LandingPage.css */
 
+
+.header {
+  background-color: #f8f9fa; /* Light grey background */
+  padding: 20px; /* Spacing around the header */
+  text-align: center; /* Center the text */
+  border-bottom: 2px solid #ddd; /* Bottom border for separation */
+}
+
+.header h1 {
+  font-size: 2.5rem; /* Large font size for the title */
+  color: #333; /* Darker text color */
+  margin: 0; /* Remove default margin */
+}
+
+
 .landing-page {
     font-family: Arial, sans-serif;
     padding: 20px;
@@ -71,3 +86,24 @@
     color: #666; /* Description color */
   }
   
+
+.buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin: 20px; /* Add margin for spacing */
+}
+
+.auth-button {
+  margin-left: 10px; /* Space between buttons */
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.auth-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}

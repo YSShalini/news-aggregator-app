@@ -1,0 +1,44 @@
+/* Homepage.css */
+
+.homepage-container {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+    min-height: 100vh; /* Full height */
+}
+
+h2 {
+    text-align: center;
+    color: #333; /* Dark text color */
+}
+
+.news-card {
+    background: #fff; /* White card for news articles */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px 0; /* Space between cards */
+    padding: 15px; /* Padding inside cards */
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff; /* Blue background */
+    padding: 10px;
+    color: white;
+}
+
+.navbar a {
+    color: white; /* Navbar links color */
+    margin: 0 10px; /* Margin between links */
+    text-decoration: none; /* No underline */
+}
+
+.navbar select {
+    padding: 5px; /* Padding for dropdown */
+}
