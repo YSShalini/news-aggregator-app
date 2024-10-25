@@ -12,20 +12,19 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Attempting to sign in with:", email, password);
-    setIsLoading(true);  // Start loading
+    setIsLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/signin", { email, password });
-      localStorage.setItem('user', JSON.stringify(response.data));
-      console.log("Sign in successful, navigating to homepage...");
-      setIsLoading(false);  // Stop loading
-      navigate("/homepage"); // redirect after sign in
+        const response = await axios.post("http://localhost:5000/api/signin", { email, password });
+        localStorage.setItem('user', JSON.stringify(response.data));
+        setIsLoading(false);
+        navigate("/homepage");
     } catch (error) {
-      console.error("Sign in error:", error);
-      setErrorMessage("Invalid credentials, please try again.");
-      setIsLoading(false);  // Stop loading
+        console.error("Sign in error:", error);
+        setErrorMessage("Invalid credentials, please try again.");
+        setIsLoading(false);
     }
-  };
+};
+
 
   return (
     <div className="signin-container">

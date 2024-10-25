@@ -20,29 +20,21 @@ const SignUp = () => {
         });
     };
 
-    // Submit form data to backend
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/api/signup', formData);
-
-            // Show alert if signup is successful
+    
             if (response.status === 201) {
                 window.alert('User registered successfully!');
-                // Optionally reset the form after successful registration
-                setFormData({
-                    username: '',
-                    email: '',
-                    password: '',
-                    interest: '',
-                    location: ''
-                });
+                setFormData({ username: '', email: '', password: '', interest: '', location: '' });
             }
         } catch (error) {
             console.error('Error signing up:', error);
             window.alert('Signup failed! Please try again.');
         }
     };
+    
 
     return (
         <div className="signup-container">
